@@ -13,8 +13,6 @@
   },
   "devDependencies": {
     "uglify-js": "*",
-    "chai": "*",
-    "mocha": "*",
     "coffee-script": "*"
   }
 }
