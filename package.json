@@ -12,6 +12,9 @@
     "url": "git@github.com:abronte/TriggerHelpers.git"
   },
   "devDependencies": {
-    "uglify-js": "1.3.x"
+    "uglify-js": "*",
+    "chai": "*",
+    "mocha": "*",
+    "coffee-script": "*"
   }
 }
