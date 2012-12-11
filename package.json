@@ -1,0 +1,17 @@
+{
+  "name": "TriggerHelper",
+  "description": "Trigger.io development helper libraries",
+  "author": {
+    "name": "Adam Bronte",
+    "email": "adam@brontesaurus.com",
+    "url": "http://brontesaurus.com"
+  },
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:abronte/TriggerHelpers.git"
+  },
+  "devDependencies": {
+    "uglify-js": "1.3.x"
+  }
+}
