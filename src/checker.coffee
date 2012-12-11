@@ -1,2 +1,4 @@
-window.isTrigger = ->
-  window.forge != undefined
+isTrigger = ->
+  root.forge != undefined
+
+root.isTrigger = isTrigger

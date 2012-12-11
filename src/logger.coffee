@@ -6,15 +6,15 @@ class Logger
   log = (msg, level) ->
     if enabled
       if isTrigger
-        window.forge.logging.log msg, eval("forge.logging."+level.toUpperCase())
+        root.forge.logging.log msg, eval("forge.logging."+level.toUpperCase())
       else
         console.log "["+level.toUpperCase()+"] "+msg
 
   constructor: ->
-    if window.forge != undefined
+    if root.forge != undefined
       isTrigger = true
 
-      window.onerror = (e, u, l) ->
+      root.onerror = (e, u, l) ->
         log(e + " on line "+l, "error")
 
   enabled: (set) ->
@@ -45,4 +45,4 @@ class Logger
   debug: (msg) ->
     log(msg, "debug") if logLevel >= 5
 
-window.log = new Logger
+root.log = new Logger

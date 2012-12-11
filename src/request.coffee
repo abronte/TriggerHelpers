@@ -2,11 +2,11 @@ class Request
   isTrigger = false
 
   constructor: ->
-    isTrigger = true if window.forge != undefined
+    isTrigger = true if root.forge != undefined
 
   get: (url, callback) ->
     if isTrigger
-      window.forge.request.get(url, callback)
+      root.forge.request.get(url, callback)
     else
       $.ajax
         type: "GET",
@@ -15,4 +15,4 @@ class Request
         processData: false
         success: callback
 
-window.request = new Request
+root.request = new Request
