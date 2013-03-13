@@ -112,6 +112,34 @@
       }
     };
 
+    Request.prototype.post = function(url, body, callback) {
+      if (isTrigger) {
+        return root.forge.request.ajax({
+          type: "POST",
+          url: url,
+          data: body,
+          success: callback
+        });
+      } else {
+        return $.ajax({
+          type: "POST",
+          url: url,
+          data: body,
+          dataType: "jsonp",
+          processData: false,
+          success: callback
+        });
+      }
+    };
+
+    Request.prototype.ajax = function(params) {
+      if (isTrigger) {
+        return root.forge.request.ajax(params);
+      } else {
+        return $.ajax(params);
+      }
+    };
+
     return Request;
 
   })();
