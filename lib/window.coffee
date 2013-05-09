@@ -1,1 +1,1 @@
-root = exports ? window
+root = (exports ? window).forge ?= {}
