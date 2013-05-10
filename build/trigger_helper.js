@@ -2,9 +2,9 @@
 (function() {
   var Logger, Prefs, Request, isTrigger, root, _base, _ref, _ref1, _ref2, _ref3;
 
-  root = (_ref = (_base = typeof exports !== "undefined" && exports !== null ? exports : window).forge) != null ? _ref : _base.forge = {};
-
   isTrigger = window.forge !== void 0;
+
+  root = (_ref = (_base = typeof exports !== "undefined" && exports !== null ? exports : window).forge) != null ? _ref : _base.forge = {};
 
   root.isTrigger = function() {
     return isTrigger;
