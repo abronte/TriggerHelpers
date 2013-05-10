@@ -24,4 +24,4 @@ class Logger
     @logLevel = level if level != undefined
     @logLevel
 
-root.log ?= new Logger
+root.logging ?= new Logger
