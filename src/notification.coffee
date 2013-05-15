@@ -2,13 +2,13 @@ class Notification
   alert: (title, text, success, error) ->
     console.warn "Title and message text are required!" unless title? and text?
     result = confirm "#{title}\n\n#{text}"
-    setTimeout(success, 1) if success?
+    _nextTick success
 
   create: @::alert
 
   confirm: (title, body, positive, negative, success, error) ->
     result = confirm "#{title}\n\n#{body}\n\n(#{negative}/#{positive})"
-    setTimeout (-> success(result)), 1 if success?
+    _nextTick -> success?(result)
 
   ###
   Not implemented:
