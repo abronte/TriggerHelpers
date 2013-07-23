@@ -117,10 +117,32 @@
       });
     };
 
+    Notification.prototype.toast = function(body, success, error) {
+      var style, toast;
+
+      style = {
+        position: "absolute",
+        top: "10%",
+        'z-index': 99,
+        width: "33%",
+        'margin-left': "33%",
+        'text-align': "center",
+        background: "#666",
+        color: "#FFF",
+        padding: "1em 0.4em",
+        'border-radius': "4px"
+      };
+      toast = $("<div>" + body + "</div>").css(style);
+      $("body").prepend(toast);
+      toast.fadeIn(200).delay(1000).fadeOut(1000, function() {
+        return toast.remove();
+      });
+      return _nextTick(success);
+    };
+
     /*
     Not implemented:
     notification.setBadgeNumber(number, success, error)
-    notification.toast(body, success, error)
     notification.showLoading(title, body, success, error)
     notification.hideLoading(success, error)
     */
