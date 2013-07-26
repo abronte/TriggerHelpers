@@ -240,7 +240,26 @@
     };
 
     Request.prototype.ajax = function(params) {
+      var oldError,
+        _this = this;
+
+      oldError = params.error;
+      if (oldError != null) {
+        params.error = function(e) {
+          return oldError(_this._transformErrorArgument(e));
+        };
+      }
       return $.ajax(params);
+    };
+
+    Request.prototype._transformErrorArgument = function(webError) {
+      return {
+        message: webError.statusText,
+        type: "EXPECTED_FAILURE",
+        subtype: null,
+        statusCode: "" + webError.status,
+        content: webError.responseText
+      };
     };
 
     return Request;
