@@ -18,7 +18,7 @@ class Logger
     for name, {level, methodName} of LEVELS
       @[name] = (msg) ->
         if @logLevel >= level
-          console[methodName ? name]("["+name.toUpperCase()+"] " + msg)
+          console[methodName ? name](msg)
 
   level: (level) ->
     @logLevel = level if level != undefined

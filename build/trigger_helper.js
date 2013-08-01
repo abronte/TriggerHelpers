@@ -72,7 +72,7 @@
         _ref3 = LEVELS[name], level = _ref3.level, methodName = _ref3.methodName;
         this[name] = function(msg) {
           if (this.logLevel >= level) {
-            return console[methodName != null ? methodName : name]("[" + name.toUpperCase() + "] " + msg);
+            return console[methodName != null ? methodName : name](msg);
           }
         };
       }
