@@ -1,7 +1,4 @@
 # Stubs for forge events.
-#
-## Not yet implemented:
-## forge.events.backPressed.*
 class Event
   ADD_LISTENERS = [
     'menuPressed'
@@ -16,5 +13,10 @@ class Event
     for namespace in ADD_LISTENERS
       @[namespace] =
         addListener: ->
+
+  backPressed:
+    addListener: ->
+    preventDefault: (success, error) ->
+      success?()
 
 root.event ?= new Event

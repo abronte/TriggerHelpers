@@ -57,6 +57,13 @@
       }
     }
 
+    Event.prototype.backPressed = {
+      addListener: function() {},
+      preventDefault: function(success, error) {
+        return typeof success === "function" ? success() : void 0;
+      }
+    };
+
     return Event;
 
   })();
